@@ -1,0 +1,34 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.*;
+import java.util.ArrayList;
+import java.util.regex.*;
+public class XO {
+
+    public static boolean getXO (String str) {
+        long xcount, ocount;
+        String regexI = "[Xx]";
+        String regexII ="[Oo]";
+        Pattern patternI = Pattern.compile(regexI);
+        Pattern patternII = Pattern.compile(regexII);
+        String stringToBeMatched = str;
+        Matcher matcherI = patternI.matcher(stringToBeMatched);
+        Matcher matcherII = patternII.matcher(stringToBeMatched);
+        // Get the current matcher state
+        MatchResult result = matcherI.toMatchResult();
+        MatchResult resultII = matcherII.toMatchResult();
+        xcount = matcherI.results().count();
+        ocount = matcherII.results().count();
+        if(xcount == ocount){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public static void main(String[] args) {
+        
+        System.out.println(XO.getXO("xoxo"));
+     
+    }
+
+}
