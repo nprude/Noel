@@ -1,0 +1,20 @@
+public class MilesPerGallon {
+    static double thisDtp;
+    static double thisMpg;
+    static double thisFuelLeft;
+    static double result;
+
+    public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+       
+        if(distanceToPump <= mpg * fuelLeft){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args){
+        MilesPerGallon myMPG = new MilesPerGallon();
+
+        System.out.println(myMPG.zeroFuel(100,50,2));
+    }
